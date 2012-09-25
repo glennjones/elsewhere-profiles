@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+
+var app      = require('http').createServer(handler),
+    fs       = require('fs'),
+    parser  = require('../lib/parser.js');
+
+
+function handler(req, res) {
+
+  // get the query object
+  var query = require('url').parse(req.url, true).query;
+
+  switch(req.url) {
+    case '/':
+      displayPage('/../static/index.html', 'text/html');
+      break;
+    default:
+      processAPICall();
+  }
+
+
+  function processAPICall(){
+    console.log('processAPICall')
+    if(query.urls){
+      parser.parseUrls(query.urls, function(data){
+        writeContent(data, query.callback);
+      });
+    }else if(query.json){
+      var json = JSON.parse(query.json)
+      parser.parseElsewhereJson(json, function(data){
+        writeContent(data, query.callback);
+      });
+    }
+
+    function writeContent(json,callback){
+      var str = JSON.stringify(json);
+      res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+      if (callback) {
+        res.end(callback + '(' + str + ')');
+      } else {
+        res.end(str);
+      }
+    }
+
+  }
+
+
+  function displayPage(path, mimeType){
+    res.writeHead(200, {'Content-Type': mimeType});
+    fs.readFile(__dirname + path, function (err, page) {
+      if (err) throw err;
+      res.end(page);
+    });
+    return;
+  };
+
+
+
+}
+
+app.listen(process.env.PORT || 8882, 'localhost');
+console.log('App @ http://localhost:' + 8882);
+

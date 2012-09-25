@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>elsewhere-profiles</title>
+
+
+
+    <style>
+      /* 1. RESET AND HTML5 SETTINGS 
+      ------------------------------*/ 
+
+      body,
+      ul,
+      ol,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      fieldset,
+      dd {
+        margin:  0;
+        padding: 0;
+      }
+
+      article,
+      aside,
+      dialog,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      nav,
+      section,
+      small {
+          display: block;
+      }
+
+
+      /* 2. BASE SETTINGS 
+      --------------------------------------------*/
+
+      html {
+        background-color: #FFF;
+        color: #444;
+      }
+
+      body {
+        font-size: 100%;
+        line-height: 1.4em;
+        font-family: calibri, arial, helvetica, 'lucida grande', 'lucida sans unicode', verdana, sans-serif;
+        border-top: 0.25em solid #444;
+        padding: 3em;
+      }
+
+      h1{
+        margin: 1em 0 1em 0;
+        font-weight: normal;
+      }
+
+      h2{
+        margin-top: 2em;
+        margin-bottom: 0;
+      }
+
+      input[type="text"]{
+        width: 30em;
+      }
+
+      textarea {
+        width: 30em;
+        height: 12em;
+      }
+
+      input[type="submit"]{
+        margin-top: 1em;
+        margin-left: 9em;
+      }
+
+      label{
+        display: inline-block;
+        width: 6em;
+      }
+
+      .notes {
+        margin: 1em 0 1em 0;
+      }
+
+      footer{
+        margin: 4em 0 4em 0;
+        color: #999;
+      }
+
+      a{
+        color: #999;
+      }
+
+
+
+    </style>
+
+  </head>
+  <body>
+    <h1>elsewhere-profiles</h1>
+
+    <h2>API example - List of prifiles Urls with hCards</h2>
+    <p class='notes'>Type in the address of a social media site profiles belonging to an individual.</p>
+
+
+    <form method="get" action=".">
+      <p><label for="urls">urls</label>
+        <textarea name="urls"/>
+http://twitter.com/glennjones,
+http://del.icio.us/glennjonesnet/,
+http://lanyrd.com/people/glennjones/,
+http://github.com/glennjones,
+https://plus.google.com/u/0/105161464208920272734/about,
+http://www.flickr.com/people/glennjonesnet/,
+http://www.linkedin.com/in/glennjones,
+http://www.slideshare.net/glennjones/,
+http://identi.ca/glennjones,
+http://huffduffer.com/glennjones,
+http://www.last.fm/user/glennjones
+        </textarea>
+      </p>
+
+      <p><label for="callback">callback</label>
+        <input type="text" name="callback"/>
+      </p>
+
+
+      <input type="submit" value="Parse"/>
+     </form>
+
+
+
+
+    <h2>API example - JSON</h2>
+    <p class='notes'>Paste in the output of the eleswhere-mapper node.js module.</p>
+
+    <form method="get" action=".">
+      <p><label for="json">json</label>
+        <textarea name="json"/>
+{
+    "identities": [{
+        "name": "Delicious",
+        "domain": "delicious.com",
+        "matchedUrl": "http://delicious.com/glennjonesnet",
+        "userName": "glennjonesnet",
+        "sgn": "sgn://delicious.com/?ident=glennjonesnet",
+        "endPoints": [{
+            "schema": "rel-tag",
+            "contentType": "Interests",
+            "mediaType": "Html",
+            "url": "http://delicious.com/glennjonesnet/tags"
+        }, {
+            "schema": "Rss",
+            "contentType": "Bookmarks",
+            "mediaType": "Rss",
+            "url": "http://delicious.com/v2/rss/glennjonesnet"
+        }, {
+            "schema": "None",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://delicious.com/glennjonesnet"
+        }],
+        "frequency": 3,
+        "icon16": "http://delicious.com/favicon.ico"
+    }, {
+        "name": "Flickr",
+        "domain": "flickr.com",
+        "matchedUrl": "http://www.flickr.com/people/glennjonesnet/",
+        "userName": "glennjonesnet",
+        "sgn": "sgn://flickr.com/?ident=glennjonesnet",
+        "endPoints": [{
+            "schema": "hCard",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://flickr.com/people/glennjonesnet/"
+        }, {
+            "schema": "XFN",
+            "contentType": "Services",
+            "mediaType": "Html",
+            "url": "http://flickr.com/people/glennjonesnet/"
+        }, {
+            "schema": "None",
+            "contentType": "Images",
+            "mediaType": "Html",
+            "url": "http://flickr.com/photos/glennjonesnet/"
+        }, {
+            "schema": "XFN",
+            "contentType": "Friends",
+            "mediaType": "Html",
+            "url": "http://flickr.com/people/glennjonesnet/contacts/?page={pagenumber}"
+        }],
+        "frequency": 0,
+        "icon16": "http://l.yimg.com/g/favicon.ico"
+    }, {
+        "name": "Huffduffer",
+        "domain": "huffduffer.com",
+        "matchedUrl": "http://huffduffer.com/glennjones",
+        "userName": "glennjones",
+        "sgn": "sgn://huffduffer.com/?ident=glennjones",
+        "endPoints": [{
+            "schema": "hCard",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://huffduffer.com/glennjones"
+        }, {
+            "schema": "Rss",
+            "contentType": "Audio",
+            "mediaType": "Rss",
+            "url": "http://huffduffer.com/glennjones/rss"
+        }, {
+            "schema": "hAtom",
+            "contentType": "Audio",
+            "mediaType": "Html",
+            "url": "http://huffduffer.com/glennjones"
+        }, {
+            "schema": "rel-tag",
+            "contentType": "Interests",
+            "mediaType": "Html",
+            "url": "http://huffduffer.com/glennjones"
+        }],
+        "frequency": 3,
+        "icon16": "http://huffduffer.com/favicon.ico"
+    }, {
+        "name": "Identica",
+        "domain": "identi.ca",
+        "matchedUrl": "http://identi.ca/glennjones",
+        "userName": "glennjones",
+        "sgn": "sgn://identi.ca/?ident=glennjones",
+        "endPoints": [{
+            "schema": "hCard",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://identi.ca/glennjones"
+        }, {
+            "schema": "FOAF",
+            "contentType": "Profile",
+            "mediaType": "Xml",
+            "url": "http://identi.ca/glennjones/foaf"
+        }, {
+            "schema": "hCard",
+            "contentType": "Friends",
+            "mediaType": "Html",
+            "url": "http://identi.ca/glennjones/subscriptions?page={pagenumber}"
+        }, {
+            "schema": "hAtom",
+            "contentType": "Status",
+            "mediaType": "Html",
+            "url": "http://identi.ca/glennjones"
+        }, {
+            "schema": "rel-tag",
+            "contentType": "Interests",
+            "mediaType": "Html",
+            "url": "http://identi.ca/glennjones"
+        }, {
+            "schema": "hAtom",
+            "contentType": "Friends Status",
+            "mediaType": "Html",
+            "url": "http://identi.ca/glennjones/all"
+        }],
+        "frequency": 3,
+        "icon16": "http://identi.ca/favicon.ico"
+    }, {
+        "name": "Last.fm",
+        "domain": "last.fm",
+        "matchedUrl": "http://www.last.fm/user/glennjones/",
+        "userName": "glennjones",
+        "sgn": "sgn://last.fm/?ident=glennjones",
+        "endPoints": [{
+            "schema": "hCard",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://last.fm/user/glennjones"
+        }, {
+            "schema": "hCard",
+            "contentType": "Friends",
+            "mediaType": "Html",
+            "url": "http://last.fm/user/glennjones/friends?page={pagenumber}"
+        }, {
+            "schema": "hCalendar",
+            "contentType": "Events",
+            "mediaType": "Html",
+            "url": "http://last.fm/user/glennjones/events"
+        }, {
+            "schema": "Rss",
+            "contentType": "Activity",
+            "mediaType": "Rss",
+            "url": "http://ws.audioscrobbler.com/2.0/user/glennjones/recenttracks.rss"
+        }, {
+            "schema": "Rss",
+            "contentType": "Events",
+            "mediaType": "Rss",
+            "url": "http://ws.audioscrobbler.com/2.0/user/glennjones/events.rss"
+        }],
+        "frequency": 3,
+        "icon16": "http://cdn.last.fm/flatness/favicon.2.ico"
+    }, {
+        "name": "Linked-in",
+        "domain": "linkedin.com",
+        "matchedUrl": "http://www.linkedin.com/in/glennjones",
+        "userName": "glennjones",
+        "sgn": "sgn://linkedin.com/?ident=glennjones",
+        "endPoints": [{
+            "schema": "hCard",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://linkedin.com/in/glennjones"
+        }, {
+            "schema": "hResume",
+            "contentType": "Resume",
+            "mediaType": "Html",
+            "url": "http://linkedin.com/in/glennjones"
+        }],
+        "frequency": 3,
+        "icon16": "http://s3.licdn.com/scds/common/u/img/favicon_v3.ico"
+    }, {
+        "name": "Picasa",
+        "domain": "picasaweb.google.com",
+        "matchedUrl": "http://picasaweb.google.com/glennjonesnet",
+        "userName": "glennjonesnet",
+        "sgn": "sgn://picasaweb.google.com/?ident=glennjonesnet",
+        "endPoints": [{
+            "schema": "None",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://picasaweb.google.com/glennjonesnet"
+        }, {
+            "schema": "Rss",
+            "contentType": "Images",
+            "mediaType": "Rss",
+            "url": "http://picasaweb.google.com/data/feed/base/user/glennjonesnet?alt=rss&kind=album&hl=en_US&access=public"
+        }],
+        "frequency": 3,
+        "icon16": "http://picasaweb.google.com/favicon.ico"
+    }, {
+        "name": "Google Plus",
+        "domain": "plus.google.com",
+        "matchedUrl": "https://plus.google.com/105161464208920272734",
+        "userId": "105161464208920272734",
+        "sgn": "sgn://plus.google.com/?pk=105161464208920272734",
+        "endPoints": [{
+            "schema": "hCard",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "https://plus.google.com/105161464208920272734/posts"
+        }, {
+            "schema": "XFN",
+            "contentType": "Services",
+            "mediaType": "Html",
+            "url": "https://plus.google.com/105161464208920272734/posts"
+        }],
+        "frequency": 1,
+        "icon16": "https://ssl.gstatic.com/s2/oz/images/faviconr2.ico"
+    }, {
+        "name": "Twitter",
+        "domain": "twitter.com",
+        "matchedUrl": "http://twitter.com/glennjones",
+        "userName": "glennjones",
+        "sgn": "sgn://twitter.com/?ident=glennjones",
+        "endPoints": [{
+            "schema": "None",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://twitter.com/glennjones"
+        }, {
+            "schema": "XFN",
+            "contentType": "Services",
+            "mediaType": "Html",
+            "url": "http://twitter.com/glennjones"
+        }],
+        "frequency": 3,
+        "icon16": "http://twitter.com/favicons/favicon.ico"
+    }, {
+        "name": "Upcoming",
+        "domain": "upcoming.yahoo.com",
+        "matchedUrl": "http://upcoming.yahoo.com/user/62673/",
+        "userId": "62673",
+        "sgn": "sgn://upcoming.yahoo.com/?pk=62673",
+        "endPoints": [{
+            "schema": "hCard",
+            "contentType": "Profile",
+            "mediaType": "Html",
+            "url": "http://upcoming.yahoo.com/user/62673/"
+        }],
+        "frequency": 3,
+        "icon16": "http://upcoming.yahoo.com/favicon.ico"
+    }],
+    "domainsNotMapped": [{
+        "url": "http://profiles.google.com/105161464208920272734",
+        "frequency": 1
+    }, {
+        "url": "http://glennjones.net/",
+        "frequency": 5
+    }, {
+        "url": "http://www.google.com/reader/shared/glennjonesnet",
+        "frequency": 3
+    }],
+    "urlsNotParsed": ["http://www.youtube.com/channel/UCLBkAp8Q5PP_zzBjrRjb_PA"]
+}
+        </textarea>
+      </p>
+
+      <p><label for="callback">callback</label>
+        <input type="text" name="callback"/>
+      </p>
+
+
+      <input type="submit" value="Parse"/>
+     </form>
+
+
+
+
+     <footer class="vcard">
+      <p>This project is maintained by <a class="url fn" href="http://glennjones.net">glennjones</a></p>
+      <p>You view and download the source from <a href="https://github.com/glennjones/elsewhere-profiles">GitHub glennjones/elsewhere-profiles</a></p>
+      <p class="copyright">It is open sourced under MIT licenses. See the license.txt file within the project source.</p>
+    </footer>
+    
+  </body>
+</html>

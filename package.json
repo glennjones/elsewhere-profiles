@@ -1,0 +1,32 @@
+{
+  "author": "Glenn Jones <glennjonesnet@gmail.com>",
+  "name": "elsewhere-profiles",
+  "description": "Extracts profiles for an individaul from across social media sites",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/glennjones/elsewhere-profiles"
+  },
+    "keywords": [
+    "hcards",
+    "h-cards",
+    "microformats",
+    "profiles",
+    "social graph",
+    "social media"
+  ],
+  "main": "index",
+  "dependencies": {
+    "request": "2.10.x",
+    "microformat-node": "0.0.x"
+    },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">= 0.8.1"
+  },
+  "scripts": {
+    "start": "bin/elsewhere-profiles"
+  }
+}
