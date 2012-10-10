@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+
 var app      = require('http').createServer(handler),
     fs       = require('fs'),
     parser  = require('../lib/parser.js');
@@ -20,7 +21,6 @@ function handler(req, res) {
 
 
   function processAPICall(){
-    console.log('processAPICall')
     if(query.urls){
       parser.parseUrls(query.urls, function(data){
         writeContent(data, query.callback);
@@ -32,7 +32,7 @@ function handler(req, res) {
       });
     }
 
-    function writeContent(json,callback){
+    function writeContent(json, callback){
       var str = JSON.stringify(json);
       res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
       if (callback) {
