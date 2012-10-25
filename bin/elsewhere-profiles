@@ -22,12 +22,18 @@ function handler(req, res) {
 
   function processAPICall(){
     if(query.urls){
-      parser.parseUrls(query.urls, function(data){
+      parser.parseUrls(query.urls, function(err, data){
+        if (err) {
+          data.errors = errors;
+        } 
         writeContent(data, query.callback);
       });
     }else if(query.json){
       var json = JSON.parse(query.json)
-      parser.parseElsewhereJson(json, function(data){
+      parser.parseElsewhereJson(json, function(err, data){
+        if (err) {
+          data.errors = errors;
+        } 
         writeContent(data, query.callback);
       });
     }

@@ -6,3 +6,7 @@ bin/.DS_Store
 static/.DS_Store
 
 .DS_Store
+
+v8.log
+
+plugins/lanyrd.js

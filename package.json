@@ -10,7 +10,6 @@
   },
     "keywords": [
     "hcards",
-    "h-cards",
     "microformats",
     "profiles",
     "social graph",
@@ -19,7 +18,9 @@
   "main": "index",
   "dependencies": {
     "request": "2.10.x",
-    "microformat-node": "0.0.x"
+    "microformat-node": "0.1.x",
+    "underscore": "1.3.x",
+    "underscore.Deferred": "0.1.x"
     },
   "devDependencies": {},
   "optionalDependencies": {},
