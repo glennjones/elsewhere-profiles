@@ -1,5 +1,5 @@
 {
-  "author": "Glenn Jones <glennjonesnet@gmail.com>",
+  "author": "Glenn Jones",
   "name": "elsewhere-profiles",
   "description": "Extracts profiles for an individaul from across social media sites",
   "version": "0.0.1",
@@ -8,13 +8,13 @@
     "type": "git",
     "url": "git://github.com/glennjones/elsewhere-profiles"
   },
-    "keywords": [
-    "hcards",
-    "microformats",
+  "keywords": [
+    "identity",
     "profiles",
     "social graph",
-    "social media"
-  ],
+    "hcard",
+    "hresume",
+    "microformats"],
   "main": "index",
   "dependencies": {
     "request": "2.10.x",

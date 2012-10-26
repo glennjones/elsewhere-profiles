@@ -21,6 +21,7 @@ function handler(req, res) {
 
 
   function processAPICall(){
+    // urls
     if(query.urls){
       parser.parseUrls(query.urls, function(err, data){
         if (err) {
@@ -28,6 +29,7 @@ function handler(req, res) {
         } 
         writeContent(data, query.callback);
       });
+    // json
     }else if(query.json){
       var json = JSON.parse(query.json)
       parser.parseElsewhereJson(json, function(err, data){

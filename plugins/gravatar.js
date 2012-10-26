@@ -13,7 +13,7 @@ exports.plugin = {
 
 
 
-	getProfile: function(url, sgn, logger, cache, options, callback) {
+	getProfile: function(url, sgn, options, callback) {
 		var parts = [], 
 			userName = '',
 			identity = {},
@@ -53,7 +53,7 @@ exports.plugin = {
 
 					var endedRequest = new Date();
             		var requestTime = endedRequest.getTime() - startedRequest.getTime();
-            		logger.log('made API call to: '  + requestTime + 'ms - ' + url);
+            		options.logger.log('made API call to: '  + requestTime + 'ms - ' + url);
 
 	            	if(data.entry){
 
@@ -122,7 +122,7 @@ exports.plugin = {
 					}
 	            	callback(out);
 	          	}else{
-	          		logger.warn('error requesting page: ' + url);
+	          		options.logger.warn('error requesting page: ' + url);
             		callback({});
 	          	}
 	        });

@@ -13,11 +13,13 @@ exports.plugin = {
 
 
 
-	getProfile: function(url, sgn, logger, cache, options, callback) {
+	getProfile: function(url, sgn, options, callback) {
 		var parts = [], 
 			userName = '',
 			identity = {},
 			www = true,
+			logger = options.logger,
+			cache = options.cache,
 			urlTemplates = ["http://github.com/{username}"];
 
 		// find username from url or sgn
