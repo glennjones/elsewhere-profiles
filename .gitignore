@@ -1,12 +1,7 @@
 
-lib/.DS_Store
-
-bin/.DS_Store
-
-static/.DS_Store
-
 .DS_Store
-
 v8.log
+node_modules
+npm-debug.log
 
 plugins/lanyrd.js
