@@ -36,6 +36,7 @@ exports.plugin = {
 		// if we have a username get profile data
 		if(identity.userName !== ''){
 			var url = 'https://api.github.com/users/' + identity.userName,
+				startedRequest = new Date(),
 				requestObj = {
 					uri: url,
 					headers: options.httpHeaders
@@ -58,9 +59,14 @@ exports.plugin = {
 			              cache.set(url, data);
 			            }
 
+		            	var endedRequest = new Date();
+	            		var requestTime = endedRequest.getTime() - startedRequest.getTime();
+	            		options.logger.log('made API call to: '  + requestTime + 'ms - ' + url);
+
 		            	callback(out);
+
 		          	}else{
-		          		logger.warn('error requesting page: ' + url);
+		          		logger.warn('error requesting github API: ' + url);
 	            		callback({});
 		          	}
 		        });
