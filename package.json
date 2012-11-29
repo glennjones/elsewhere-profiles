@@ -2,7 +2,7 @@
   "author": "Glenn Jones",
   "name": "elsewhere-profiles",
   "description": "Extracts profiles for an individaul from across social media sites",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "repository": {
     "type": "git",
