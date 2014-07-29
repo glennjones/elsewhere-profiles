@@ -67,5 +67,5 @@ function handler(req, res) {
 }
 
 app.listen(process.env.PORT || 8882, 'localhost');
-console.log('App @ http://localhost:' + 8882);
+console.log('App @ http://localhost:' + (process.env.PORT || 8882));
 

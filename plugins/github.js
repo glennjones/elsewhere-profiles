@@ -80,7 +80,7 @@ exports.plugin = {
         	if(data.type && data.type === 'User'){
 
         		// map data into ufData format from api json
-        		if(data.name !== '') {out.fn = data.name};
+        		if(data.name !== '') {out.name = data.name};
         		if(data.username !== '') {out.nickname = data.username};
         		if(data.blog !== '') {
         			if(!out.url) {out.url =[]}
