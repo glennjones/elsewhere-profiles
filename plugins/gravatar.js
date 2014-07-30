@@ -141,7 +141,7 @@ exports.plugin = {
 					}
 				}
 			}
-			return out;
+			return {type: ['h-card'], properties: out};
 		}
 
 

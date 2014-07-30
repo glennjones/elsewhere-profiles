@@ -80,12 +80,15 @@ http://upcoming.yahoo.com/user/62673/
     { 
         "profiles": [{
             "profile": {
-                "adr": [{
-                    "locality": "Brighton",
-                    "country-name": "United Kingdom"
-                }],
-                "note": ["Glenn Jones is a director and a founder of Madgex. Equally as passionate about interaction design and coding, he is currently addicted to exploring ideas of the semantic web and data portability."],
-                "url": ["http://www.glennjones.net"]
+                "type": ["h-card"],
+                "properties":{
+                    "adr": [{
+                        "locality": "Brighton",
+                        "country-name": "United Kingdom"
+                    }],
+                    "note": ["Glenn Jones is a director and a founder of Madgex. Equally as passionate about interaction design and coding, he is currently addicted to exploring ideas of the semantic web and data portability."],
+                    "url": ["http://www.glennjones.net"]
+                }
             },
             "identity": {
                 "name": "Flickr",
@@ -109,17 +112,20 @@ http://upcoming.yahoo.com/user/62673/
             }
         }, {
             "profile": {
-                "adr": [{
-                    "locality": "Brighton, United Kingdom"
-                }],
-                "fn": "Glenn Jones",
-                "n": {
-                    "given-name": ["Glenn"],
-                    "family-name": ["Jones"]
-                },
-                "photo": ["http://m3.licdn.com/mpr/pub/image-gHqDu1tz7mTBl71NNV7WML3hcO_1GoUWgH-d6cqcc_u1-ekTgHqd9Kozc4DJGoTXS4Iw/glenn-jones.jpg"],
-                "title": ["Creative Director at Madgex and Owner, Madgex"],
-                "note": "Madgex"
+                "type": ["h-card"],
+                "properties":{
+                    "adr": [{
+                        "locality": "Brighton, United Kingdom"
+                    }],
+                    "fn": "Glenn Jones",
+                    "n": {
+                        "given-name": ["Glenn"],
+                        "family-name": ["Jones"]
+                    },
+                    "photo": ["http://m3.licdn.com/mpr/pub/image-gHqDu1tz7mTBl71NNV7WML3hcO_1GoUWgH-d6cqcc_u1-ekTgHqd9Kozc4DJGoTXS4Iw/glenn-jones.jpg"],
+                    "title": ["Creative Director at Madgex and Owner, Madgex"],
+                    "note": "Madgex"
+                }
             },
             "identity": {
                 "name": "Linked-in",
@@ -143,40 +149,43 @@ http://upcoming.yahoo.com/user/62673/
             }
         }],
         "combinedProfile": {
-            "adr": [{
-                "locality": "Brighton",
-                "country-name": "United Kingdom"
-            }],
-            "url": ["http://www.glennjones.net"],
-            "note": ["Glenn Jones is a Director and founder of Madgex. Equally as passionate about interaction design and coding, he is currently addicted to exploring ideas of the semantic web and data portability. <br />"],
-            "fn": "Glenn Jones",
-            "nickname": ["glennjones"],
-            "n": {
-                "given-name": ["Glenn"],
-                "family-name": ["Jones"]
-            },
-            "photo": ["http://m3.licdn.com/mpr/pub/image-gHqDu1tz7mTBl71NNV7WML3hcO_1GoUWgH-d6cqcc_u1-ekTgHqd9Kozc4DJGoTXS4Iw/glenn-jones.jpg"],
-            "title": ["Creative Director at Madgex and Owner, Madgex"]
-            ],
-            "username": "glennjones",
-            "highestFrequencySite": "http://glennjones.net/",
-            "accounts": [ {
-                "name": "Flickr",
-                "domain": "flickr.com",
-                "profileUrl": "http://flickr.com/people/glennjonesnet/",
-                "userName": "glennjonesnet",
-                "sgn": "sgn://flickr.com/?ident=glennjonesnet",
-                "icon16": "http://l.yimg.com/g/favicon.ico",
-                "frequency": 0
-            }, {
-                "name": "Linked-in",
-                "domain": "linkedin.com",
-                "profileUrl": "http://linkedin.com/in/glennjones",
-                "userName": "glennjones",
-                "sgn": "sgn://linkedin.com/?ident=glennjones",
-                "icon16": "http://s3.licdn.com/scds/common/u/img/favicon_v3.ico",
-                "frequency": 5
-            },]
+            "type": ["h-card"],
+                "properties":{
+                "adr": [{
+                    "locality": "Brighton",
+                    "country-name": "United Kingdom"
+                }],
+                "url": ["http://www.glennjones.net"],
+                "note": ["Glenn Jones is a Director and founder of Madgex. Equally as passionate about interaction design and coding, he is currently addicted to exploring ideas of the semantic web and data portability. <br />"],
+                "fn": "Glenn Jones",
+                "nickname": ["glennjones"],
+                "n": {
+                    "given-name": ["Glenn"],
+                    "family-name": ["Jones"]
+                },
+                "photo": ["http://m3.licdn.com/mpr/pub/image-gHqDu1tz7mTBl71NNV7WML3hcO_1GoUWgH-d6cqcc_u1-ekTgHqd9Kozc4DJGoTXS4Iw/glenn-jones.jpg"],
+                "title": ["Creative Director at Madgex and Owner, Madgex"]
+                ],
+                "username": "glennjones",
+                "highestFrequencySite": "http://glennjones.net/",
+                "accounts": [ {
+                    "name": "Flickr",
+                    "domain": "flickr.com",
+                    "profileUrl": "http://flickr.com/people/glennjonesnet/",
+                    "userName": "glennjonesnet",
+                    "sgn": "sgn://flickr.com/?ident=glennjonesnet",
+                    "icon16": "http://l.yimg.com/g/favicon.ico",
+                    "frequency": 0
+                }, {
+                    "name": "Linked-in",
+                    "domain": "linkedin.com",
+                    "profileUrl": "http://linkedin.com/in/glennjones",
+                    "userName": "glennjones",
+                    "sgn": "sgn://linkedin.com/?ident=glennjones",
+                    "icon16": "http://s3.licdn.com/scds/common/u/img/favicon_v3.ico",
+                    "frequency": 5
+                },]
+            }
         },
         "noProfilesFound": [ {
             "name": "Upcoming",
