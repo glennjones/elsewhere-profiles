@@ -80,27 +80,21 @@ exports.plugin = {
         	if(data.type && data.type === 'User'){
 
         		// map data into ufData format from api json
-        		if(data.name !== '') {out.name = data.name};
-        		if(data.username !== '') {out.nickname = data.username};
-        		if(data.blog !== '') {
+        		if(data.name && data.name !== '') {out.name = data.name};
+        		if(data.username && data.username !== '') {out.nickname = data.username};
+        		if(data.blog && data.blog !== '') {
         			if(!out.url) {out.url =[]}
         			out.url.push(data.blog);
         		};
-        		if(data.html_url !== '') {
+        		if(data.html_url && data.html_url !== '') {
         			if(!out.url) {out.url =[]}
         			out.url.push(data.html_url);
         		};
         		if(data.bio !== null) {out.note = [data.bio]};
-        		if(data.location !== '') {out.label = [data.location]};
-				if(data.company !== '') {
-					out.org = [];
-					out.org.push({'organization-name' : data.company})
-				};
-				if(data.avatar_url !== '') {out.photo = [data.avatar_url]}; 
-				if(data.email !== '') {
-					out.email = [];
-					out.email.push({'value' : data.email})
-				};
+        		if(data.location && data.location !== '') {out.label = [data.location]};
+				if(data.company && data.company !== '') {out['organization-name'] = [data.company]};
+				if(data.avatar_url && data.avatar_url !== '') {out.photo = [data.avatar_url]}; 
+				if(data.email && data.email !== '') {out.email = [data.email]};
         		
 			}
 			return {type: ['h-card'], properties: out};

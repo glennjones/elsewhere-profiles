@@ -83,17 +83,15 @@ exports.plugin = {
 	    		// map data into ufData format from api json
 
 	        	if(utils.getNodeVaue('name.givenName', entry) !== ''){
-	        		if(!out.n) {out.n = {}};
-	        		out.n['given-name'] = utils.getNodeVaue('name.givenName', entry)
+	        		out['given-name'] = utils.getNodeVaue('name.givenName', entry)
 	        	}	
 
 	        	if(utils.getNodeVaue('name.familyName', entry) !== ''){
-	        		if(!out.n) {out.n = {}};
-	        		out.n['family-name'] = utils.getNodeVaue('name.familyName', entry)
+	        		out['family-name'] = utils.getNodeVaue('name.familyName', entry)
 	        	}	
 
 	        	if(utils.getNodeVaue('name.formatted', entry) !== ''){
-	        		out.fn = utils.getNodeVaue('name.formatted', entry)
+	        		out.name = utils.getNodeVaue('name.formatted', entry)
 	        	}	
 
 	        	if(entry.thumbnailUrl){
